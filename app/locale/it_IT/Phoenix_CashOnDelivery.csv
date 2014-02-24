@@ -9,3 +9,8 @@
 "Cash on Delivery fee (Incl.Tax)","Tariffa contrassegno (Incl.Tasse)"
 "Cash on Delivery fee %s","Tariffa contrassegno %s"
 "Refund Cash on Delivery fee","Rimborso tariffa contrassegno"
+"Cost calculation","Calcolo dei costi"
+"Fixed","Fisso"
+"Percentage","Percentuale"
+"Cost calculation base","Base calcolo dei costi"
+"Please enter an sales_flat_quote_address attribute code which will be taken as base for the cost calculation.","Per favore inserire un codice attributo della sales_flat_quote_address che verrà usato come base per il calcolo dei costi."
