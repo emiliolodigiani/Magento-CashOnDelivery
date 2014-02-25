@@ -169,12 +169,14 @@ class Phoenix_CashOnDelivery_Model_CashOnDelivery extends Mage_Payment_Model_Met
                 }
             }
             if ($this->getConfigData('disallowspecificshippingmethods', $quote->getStoreId()) == 1) {
-                $shippingMethodCode        = explode('_', $quote->getShippingAddress()->getShippingMethod());
-                $shippingMethodCode        = $shippingMethodCode[0];
+                $shippingMethodCode        = $quote->getShippingAddress()->getShippingMethod();
                 $disallowedShippingMethods = $this->getConfigData('disallowedshippingmethods', $quote->getStoreId());
-
-                if (in_array($shippingMethodCode, explode(',', $disallowedShippingMethods))) {
-                    return false;
+                $disallowedShippingMethods = explode(',', $disallowedShippingMethods);
+                
+                foreach($disallowedShippingMethods as $disallowedShippingMethod){
+                	if(strpos($shippingMethodCode, $disallowedShippingMethod) !== false){
+                		return false;
+                	}
                 }
             }
         }
